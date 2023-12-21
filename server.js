@@ -37,13 +37,13 @@ app.get('/send', async (req, res) => {
 
 app.post('/message', async (req, res) => {
 
-  const {to, subject, text} = req.body
+  const { from, to, subject, text } = req.body
 
   await transporter.sendMail({
-    from: process.env.EMAIL_USER,
-    to: to,
-    subject: subject,
-    text: text,
+    from,
+    to,
+    subject,
+    text,
   })
     .then(result => res.send(result))
     .catch(error => res.send(error))
