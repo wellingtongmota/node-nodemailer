@@ -31,8 +31,8 @@ app.get('/send', async (req, res) => {
     subject: "Hello ✔",
     text: "Hello world!",
   })
-    .then(result => res.send(result))
-    .catch(error => res.send(error))
+    .then(() => res.status(200).send())
+    .catch(() => res.status(400).send())
 })
 
 app.post('/message', async (req, res) => {
@@ -45,8 +45,8 @@ app.post('/message', async (req, res) => {
     subject,
     text,
   })
-    .then(() => res.send(res.statusCode))
-    .catch(error => res.send(error))
+    .then(() => res.status(200).send())
+    .catch(() => res.status(400).send())
 })
 
 
