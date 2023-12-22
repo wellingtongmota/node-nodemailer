@@ -24,18 +24,7 @@ const transporter = nodemailer.createTransport({
 // ROTAS
 app.get('/', (req, res) => res.send('NODE.JS: backend email'))
 
-app.get('/send', async (req, res) => {
-  await transporter.sendMail({
-    from: process.env.EMAIL_USER,
-    to: "wellingtongalvao96@gmail.com",
-    subject: "Hello ✔",
-    text: "Hello world!",
-  })
-    .then(() => res.status(200).send())
-    .catch(() => res.status(400).send())
-})
-
-app.post('/message', async (req, res) => {
+app.post('/send', async (req, res) => {
 
   const { from, to, subject, text } = req.body
 
