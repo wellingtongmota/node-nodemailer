@@ -34,8 +34,11 @@ app.post('/send', async (req, res) => {
     subject,
     text,
   })
-    .then(() => res.status(200).send())
-    .catch(() => res.status(400).send())
+    .then(() => res.status(200).send({message: 'Dados enviados!'}))
+    .catch((error) => res.status(400).send({
+      message: 'Erro ao enviar dados',
+      error: error 
+    }))
 })
 
 
