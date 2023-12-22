@@ -45,7 +45,7 @@ app.post('/message', async (req, res) => {
     subject,
     text,
   })
-    .then(result => res.send(result))
+    .then(() => res.send(res.statusCode))
     .catch(error => res.send(error))
 })
 
