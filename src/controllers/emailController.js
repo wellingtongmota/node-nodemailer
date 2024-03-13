@@ -4,28 +4,16 @@ import { transporter } from "../api/nodemailer.js"
 export const validateBody = (req, res, next) => {
   const { name, email, message } = req.body
 
-  if (name === undefined) {
+  if (name === undefined || name === '') {
     return res.status(400).json({ message: 'O campo name é requerido' })
   }
 
-  if (name === '') {
-    return res.status(400).json({ message: 'O campo name não pode estar vazio' })
-  }
-
-  if (email === undefined) {
+  if (email === undefined || email === '') {
     return res.status(400).json({ message: 'O campo email é requerido' })
   }
 
-  if (email === '') {
-    return res.status(400).json({ message: 'O campo email não pode estar vazio' })
-  }
-
-  if (message === undefined) {
+  if (message === undefined || message === '') {
     return res.status(400).json({ message: 'O campo message é requerido' })
-  }
-
-  if (message === '') {
-    return res.status(400).json({ message: 'O campo message não pode estar vazio' })
   }
 
   next()
