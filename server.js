@@ -26,7 +26,7 @@ app.get('/', (req, res) => res.send('NODE.JS: backend email'))
 
 app.get('/send', async (req, res) => {
 
-  const { email, subject, message } = req.body
+  const { name, email, subject, message } = req.body
 
   await transporter.sendMail({
     from: process.env.EMAIL_USER,
@@ -69,11 +69,14 @@ app.get('/send', async (req, res) => {
     <body>
     
     <div class="container">
-      <h1>Registro Realizado com Sucesso</h1>
+      <h1>Registro realizado com sucesso</h1>
       <p>Prezado(a),</p>
       <p>Obrigado por se registrar conosco. Seu registro foi realizado com sucesso!</p>
-      <p>Nome: [Nome]</p>
-      <p>Email: ${email}</p>
+      <p>
+        Nome: ${name}
+        <br>
+        Email: ${email}
+      </p>
       <div class="message">
         <p>Mensagem deixada pelo usuário:</p>
         <p>${message}</p>
