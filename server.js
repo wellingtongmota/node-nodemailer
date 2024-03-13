@@ -30,14 +30,14 @@ app.get('/send', async (req, res) => {
 
   await transporter.sendMail({
     from: process.env.EMAIL_USER,
-    to: email,
+    to: process.env.EMAIL_TEST,
     subject: subject,
     html: `<!DOCTYPE html>
     <html lang="pt-BR">
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Realizado com Sucesso</title>
+    <title>Canal de dúvidas</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -69,9 +69,7 @@ app.get('/send', async (req, res) => {
     <body>
     
     <div class="container">
-      <h1>Registro realizado com sucesso</h1>
-      <p>Prezado(a),</p>
-      <p>Obrigado por se registrar conosco. Seu registro foi realizado com sucesso!</p>
+      <h1>Canal de dúvidas</h1>
       <p>
         Nome: ${name}
         <br>
@@ -81,10 +79,8 @@ app.get('/send', async (req, res) => {
         <p>Mensagem deixada pelo usuário:</p>
         <p>${message}</p>
       </div>
-      <p>Se tiver alguma dúvida, sinta-se à vontade para nos contatar.</p>
-      <p>Atenciosamente,<br> [Sua Empresa]</p>
     </div>
-    
+    <br>
     </body>
     </html>`
   })
