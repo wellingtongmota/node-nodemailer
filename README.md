@@ -1,6 +1,6 @@
-# Servidor de Email com Nodemailer
+# Email Server with Nodemailer
 
-## Dependências Instaladas
+## Dependencies
 
 - cors
 - dotenv
@@ -16,7 +16,7 @@
 ## Endpoints
 
 `GET /`:
-Retorna "NODE.JS: backend email"
+Returns "NODE.JS: backend email"
 
 ```
 POST /end-doubt
@@ -29,7 +29,7 @@ body: {
 }
 ```
 
-Valida o corpo da requisição e envia uma dúvida
+Validates the request body and sends a doubt
 
 ## Author
 

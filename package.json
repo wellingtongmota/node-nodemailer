@@ -1,7 +1,7 @@
 {
   "name": "email",
   "version": "1.1.0",
-  "description": "Servidor de email com nodemailer",
+  "description": "Email Server with Nodemailer",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "Wellington Galvão",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
