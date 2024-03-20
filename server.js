@@ -1,6 +1,6 @@
 import express from "express"
 import cors from "cors"
-import * as emailController from './src/controllers/emailController.js'
+import * as emailController from "./src/controllers/emailController.js"
 
 const app = express()
 
@@ -11,10 +11,9 @@ app.use(express.json())
 app.use(cors())
 
 // ROTAS
-app.get('/', (req, res) => res.send('NODE.JS: backend email'))
+app.get("/", (req, res) => res.send("NODE.JS: backend email"))
 
-app.post('/send-doubt', emailController.validateBody, emailController.sendDoubt)
-
+app.post("/send-doubt", emailController.validateBody, emailController.sendDoubt)
 
 const porta = process.env.PORT ?? 3003
 app.listen(porta, () => console.log(`Servidor no ar, porta ${porta}`))
